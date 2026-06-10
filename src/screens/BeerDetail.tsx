@@ -25,7 +25,7 @@ export function BeerDetailScreen({ beerId, onBack, onSelect }: BeerDetailScreenP
   const others = BEERS.filter((x) => x.id !== b.id).slice(0, 3);
 
   return (
-    <div className="wrap" style={{ paddingTop: 32 }}>
+    <div className="wrap" style={{ paddingTop: "clamp(20px, 4vw, 32px)" }}>
       <button
         onClick={onBack}
         style={{
@@ -53,7 +53,7 @@ export function BeerDetailScreen({ beerId, onBack, onSelect }: BeerDetailScreenP
               color: onCap,
               borderRadius: "var(--radius-md)",
               border: "3px double var(--ink-800)",
-              padding: "44px 32px",
+              padding: "clamp(28px, 5vw, 44px) clamp(18px, 4vw, 32px)",
               textAlign: "center",
               boxShadow: "var(--shadow-md)",
             }}
@@ -77,7 +77,7 @@ export function BeerDetailScreen({ beerId, onBack, onSelect }: BeerDetailScreenP
                 src={b.bottle}
                 alt={`Ampolla de ${b.name}`}
                 style={{
-                  height: 260,
+                  height: "clamp(190px, 36vw, 260px)",
                   objectFit: "contain",
                   marginBottom: 20,
                   filter: "drop-shadow(0 10px 18px rgba(42,27,16,0.35))",

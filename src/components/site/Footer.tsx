@@ -12,7 +12,7 @@ export function Footer({ onNav }: FooterProps) {
   ];
   return (
     <footer className="paper-grain" style={{ background: "var(--stout-900)", color: "var(--paper-300)", marginTop: "var(--space-9)" }}>
-      <div className="wrap footer-grid" style={{ padding: "56px 32px 40px" }}>
+      <div className="wrap footer-grid" style={{ paddingTop: "clamp(40px, 7vw, 56px)", paddingBottom: 40 }}>
         <div>
           <div style={{ fontFamily: "var(--font-display)", fontSize: "30px", color: "var(--paper-100)" }}>Ales Agullons</div>
           <p
@@ -87,7 +87,7 @@ export function Footer({ onNav }: FooterProps) {
       <div
         style={{
           borderTop: "1px solid rgba(255,255,255,0.12)",
-          padding: "16px 32px",
+          padding: "16px 20px",
           textAlign: "center",
           fontFamily: "var(--font-spec)",
           fontSize: "11px",

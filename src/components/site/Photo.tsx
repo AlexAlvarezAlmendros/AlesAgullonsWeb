@@ -3,7 +3,8 @@ import type { CSSProperties } from "react";
 export interface PhotoProps {
   src: string;
   alt: string;
-  height?: number;
+  /** Fixed px or a fluid CSS length (e.g. "clamp(220px, 45vw, 360px)"). */
+  height?: number | string;
   caption?: string;
   style?: CSSProperties;
 }

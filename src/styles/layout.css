@@ -1,7 +1,9 @@
 /* ============================================================
-   ALES AGULLONS — LAYOUT HELPERS
-   Responsive grids for the website screens. Desktop matches the
-   design-system UI kit; below 880px everything stacks.
+   ALES AGULLONS — LAYOUT HELPERS (mobile-first)
+   Base styles target small screens; min-width media queries
+   progressively restore the desktop layout of the UI kit.
+   Breakpoints: 640px (2-col grids) · 880px (splits, desktop nav)
+   · 980px (3-col grids).
    ============================================================ */
 
 html,
@@ -10,72 +12,205 @@ body {
   background: var(--bg-page);
 }
 
-.wrap {
-  max-width: var(--container-xl);
-  margin: 0 auto;
-  padding-left: 32px;
-  padding-right: 32px;
+img {
+  max-width: 100%;
 }
 
+.wrap,
 .wrap-md {
-  max-width: var(--container-md);
   margin: 0 auto;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
+.wrap { max-width: var(--container-xl); }
+.wrap-md { max-width: var(--container-md); }
 
-/* Two-column splits (hero, specials band, history teaser, detail) */
-.split {
-  display: grid;
-  gap: 48px;
-  align-items: center;
-}
-.split-hero { grid-template-columns: 1.1fr 0.9fr; }
-.split-specials { grid-template-columns: 0.9fr 1.1fr; }
-.split-half { grid-template-columns: 1fr 1fr; }
-.split-detail {
-  grid-template-columns: 1fr 1fr;
-  align-items: start;
-}
-
-/* Card grids */
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 40px;
-}
-
-@media (max-width: 980px) {
-  .grid-3 { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 880px) {
-  .split-hero,
-  .split-specials,
-  .split-half,
-  .split-detail {
-    grid-template-columns: 1fr;
-  }
-  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
-}
-
-@media (max-width: 640px) {
-  .grid-3,
-  .grid-2 { grid-template-columns: 1fr; }
+@media (min-width: 640px) {
   .wrap,
   .wrap-md {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* --- Two-column splits (hero, specials band, history teaser, detail) --- */
+.split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.split-detail { align-items: start; }
+
+@media (min-width: 880px) {
+  .split { gap: 48px; }
+  .split-hero { grid-template-columns: 1.1fr 0.9fr; }
+  .split-specials { grid-template-columns: 0.9fr 1.1fr; }
+  .split-half,
+  .split-detail { grid-template-columns: 1fr 1fr; }
+}
+
+/* --- Card grids --- */
+.grid-3,
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+
+@media (min-width: 640px) {
+  .grid-3,
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 980px) {
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* --- Footer --- */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+@media (min-width: 880px) {
+  .footer-grid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+/* ============================================================
+   SITE HEADER & NAVIGATION
+   Mobile: logo + hamburger; the menu drops down inside the
+   sticky header. Desktop (≥880px): inline letterpress nav.
+   ============================================================ */
+
+.site-header {
+  background: var(--paper-200);
+  border-bottom: 1.5px solid var(--line-soft);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-label);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-700);
+  padding: 8px 12px;
+  border-bottom: 2px solid transparent;
+}
+.nav-link.active {
+  color: var(--brand-accent);
+  border-bottom-color: var(--brand-accent);
+}
+
+/* Desktop nav */
+.nav-desktop {
+  display: none;
+  align-items: center;
+  gap: 8px;
+}
+.nav-divider {
+  width: 1px;
+  height: 22px;
+  background: var(--line-soft);
+  margin: 0 6px;
+}
+
+/* Hamburger toggle */
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: 1.5px solid var(--ink-700);
+  border-radius: var(--radius-sm);
+  color: var(--ink-900);
+  cursor: pointer;
+  padding: 0;
+}
+.nav-toggle:active {
+  box-shadow: var(--shadow-press);
+  transform: translateY(1px);
+}
+
+/* Mobile dropdown panel */
+.nav-mobile {
+  border-top: 1px solid var(--line-faint);
+  padding: 8px 0 18px;
+  display: flex;
+  flex-direction: column;
+}
+.nav-mobile .nav-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  padding: 14px 4px;
+  border-bottom: 1px solid var(--line-faint);
+}
+.nav-mobile .nav-link.active {
+  border-bottom: 1px solid var(--line-faint);
+  color: var(--brand-accent);
+}
+.nav-mobile-cta {
+  margin-top: 16px;
+}
+
+@media (min-width: 880px) {
+  .header-inner {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  .nav-desktop { display: flex; }
+  .nav-toggle,
+  .nav-mobile { display: none; }
+}
+
+/* ============================================================
+   SCREEN HELPERS
+   ============================================================ */
+
+/* Vertical rhythm for page sections — fluid, tighter on mobile */
+.section {
+  padding-top: clamp(44px, 8vw, 72px);
+  padding-bottom: clamp(44px, 8vw, 72px);
+}
+
+/* Història timeline rows */
+.milestone {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 16px;
+  padding: 22px 0;
+  border-top: 1px solid var(--line-faint);
+}
+.milestone:first-child { border-top: none; }
+
+@media (min-width: 640px) {
+  .milestone {
+    grid-template-columns: 120px 1fr;
+    gap: 28px;
+    padding: 26px 0;
   }
 }

@@ -16,7 +16,7 @@ export function HomeScreen({ onNav, onSelect }: HomeScreenProps) {
     <div>
       {/* Hero */}
       <section className="paper-grain" style={{ background: "var(--paper-300)", borderBottom: "1.5px solid var(--line-soft)" }}>
-        <div className="wrap split split-hero" style={{ paddingTop: 72, paddingBottom: 72 }}>
+        <div className="wrap split split-hero section">
           <div>
             <Eyebrow>Cervesa artesana · des de 2008</Eyebrow>
             <h1 style={{ fontSize: "clamp(40px, 6vw, 64px)", lineHeight: 0.98, margin: "16px 0 18px", color: "var(--ink-900)" }}>
@@ -37,12 +37,12 @@ export function HomeScreen({ onNav, onSelect }: HomeScreenProps) {
               </Button>
             </div>
           </div>
-          <Photo src="/_o5c9117.jpg" alt="La barra de fusta del bar amb la bóta i els tiradors" height={360} />
+          <Photo src="/_o5c9117.jpg" alt="La barra de fusta del bar amb la bóta i els tiradors" height="clamp(220px, 48vw, 360px)" />
         </div>
       </section>
 
       {/* Featured beers */}
-      <section className="wrap" style={{ paddingTop: 72, paddingBottom: 72 }}>
+      <section className="wrap section">
         <div
           style={{
             display: "flex",
@@ -55,7 +55,7 @@ export function HomeScreen({ onNav, onSelect }: HomeScreenProps) {
         >
           <div>
             <Eyebrow>Les cerveses</Eyebrow>
-            <h2 style={{ fontSize: "40px", margin: "10px 0 0" }}>De la pàlida a la torrada</h2>
+            <h2 style={{ fontSize: "clamp(30px, 4.5vw, 40px)", margin: "10px 0 0" }}>De la pàlida a la torrada</h2>
           </div>
           <Button variant="outline" onClick={() => onNav("beers")}>
             Totes les cerveses
@@ -84,11 +84,11 @@ export function HomeScreen({ onNav, onSelect }: HomeScreenProps) {
 
       {/* Specials band */}
       <section className="paper-grain" style={{ background: "var(--brown-700)", color: "var(--paper-200)" }}>
-        <div className="wrap split split-specials" style={{ paddingTop: 72, paddingBottom: 72 }}>
-          <Photo src="/P1050368.jpg" alt="Bótes de roure i caixes al celler de la masia" height={300} />
+        <div className="wrap split split-specials section">
+          <Photo src="/P1050368.jpg" alt="Bótes de roure i caixes al celler de la masia" height="clamp(220px, 45vw, 300px)" />
           <div>
             <Eyebrow tone="paper">Edicions especials</Eyebrow>
-            <h2 style={{ fontSize: "42px", margin: "12px 0 16px", color: "var(--paper-100)" }}>Setembre &amp; Barrica</h2>
+            <h2 style={{ fontSize: "clamp(30px, 5vw, 42px)", margin: "12px 0 16px", color: "var(--paper-100)" }}>Setembre &amp; Barrica</h2>
             <p style={{ fontFamily: "var(--font-text)", fontSize: "18px", lineHeight: 1.65, color: "var(--paper-300)", maxWidth: 460 }}>
               Cerveses de fermentació mixta i criança en bóta de roure, algunes macerades amb raïm del Penedès. Les elaborem
               només una vegada l'any —d'aquí el nom de la Setembre.
@@ -108,10 +108,10 @@ export function HomeScreen({ onNav, onSelect }: HomeScreenProps) {
       </section>
 
       {/* History teaser */}
-      <section className="wrap split split-half" style={{ paddingTop: 72, paddingBottom: 72 }}>
+      <section className="wrap split split-half section">
         <div>
           <Eyebrow>La masia</Eyebrow>
-          <h2 style={{ fontSize: "40px", margin: "10px 0 16px" }}>Un celler que abans feia vi</h2>
+          <h2 style={{ fontSize: "clamp(30px, 4.5vw, 40px)", margin: "10px 0 16px" }}>Un celler que abans feia vi</h2>
           <p style={{ fontFamily: "var(--font-text)", fontSize: "18px", lineHeight: 1.65, color: "var(--ink-700)", maxWidth: 480 }}>
             Vam començar el 2008 en una masia tradicional catalana que històricament havia elaborat vi. Hem après pel carrer, a
             poc a poc, fent cervesa com ens agrada beure-la.
@@ -122,7 +122,7 @@ export function HomeScreen({ onNav, onSelect }: HomeScreenProps) {
             </Button>
           </div>
         </div>
-        <Photo src="/p1010559.jpg" alt="La masia entre els camps d'ordi" height={300} />
+        <Photo src="/p1010559.jpg" alt="La masia entre els camps d'ordi" height="clamp(220px, 45vw, 300px)" />
       </section>
     </div>
   );

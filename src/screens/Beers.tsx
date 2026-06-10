@@ -51,7 +51,7 @@ export function BeersScreen({ onSelect }: BeersScreenProps) {
   const regulars = BEERS.filter((b) => !b.special);
   const specials = BEERS.filter((b) => b.special);
   return (
-    <div className="wrap" style={{ paddingTop: 56 }}>
+    <div className="wrap" style={{ paddingTop: "clamp(36px, 6vw, 56px)" }}>
       <Eyebrow>Cerveses</Eyebrow>
       <h1 style={{ fontSize: "clamp(38px, 5vw, 52px)", margin: "12px 0 8px" }}>El nostre catàleg</h1>
       <p style={{ fontFamily: "var(--font-text)", fontSize: "18px", color: "var(--ink-700)", maxWidth: 560, marginBottom: "40px" }}>
@@ -59,9 +59,9 @@ export function BeersScreen({ onSelect }: BeersScreenProps) {
         (cask).
       </p>
       <BeerGrid list={regulars} onSelect={onSelect} />
-      <div style={{ display: "flex", alignItems: "center", gap: "18px", margin: "56px 0 32px" }}>
-        <h2 style={{ fontSize: "32px", margin: 0, whiteSpace: "nowrap" }}>Edicions especials</h2>
-        <span style={{ flex: 1, height: "1.5px", background: "var(--line-soft)" }} />
+      <div style={{ display: "flex", alignItems: "center", gap: "14px 18px", margin: "56px 0 32px", flexWrap: "wrap" }}>
+        <h2 style={{ fontSize: "clamp(26px, 4vw, 32px)", margin: 0, whiteSpace: "nowrap" }}>Edicions especials</h2>
+        <span style={{ flex: 1, minWidth: 40, height: "1.5px", background: "var(--line-soft)" }} />
         <Tag tone="merlot" outline>
           Una vegada l'any
         </Tag>

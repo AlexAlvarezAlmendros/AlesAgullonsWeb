@@ -19,7 +19,7 @@ export function HistoriaScreen({ onNav }: HistoriaScreenProps) {
   return (
     <div>
       <section className="paper-grain" style={{ background: "var(--paper-300)", borderBottom: "1.5px solid var(--line-soft)" }}>
-        <div className="wrap-md" style={{ paddingTop: 72, paddingBottom: 72, textAlign: "center" }}>
+        <div className="wrap-md section" style={{ textAlign: "center" }}>
           <Eyebrow rules align="center">
             Història
           </Eyebrow>
@@ -40,27 +40,25 @@ export function HistoriaScreen({ onNav }: HistoriaScreenProps) {
         </div>
       </section>
 
-      <section className="wrap-md" style={{ paddingTop: 64, paddingBottom: 64 }}>
+      <section className="wrap-md section">
         <Photo
           src="/masiaagullons.jpg"
           alt="Panoràmica de la masia Agullons"
-          height={320}
+          height="clamp(200px, 40vw, 320px)"
           caption="La masia, entre els camps de Sant Joan de Mediona."
           style={{ marginBottom: "48px" }}
         />
         <div style={{ display: "flex", flexDirection: "column" }}>
-          {MILESTONES.map(([year, title, body], i) => (
-            <div
-              key={year}
-              style={{
-                display: "grid",
-                gridTemplateColumns: "120px 1fr",
-                gap: "28px",
-                padding: "26px 0",
-                borderTop: i === 0 ? "none" : "1px solid var(--line-faint)",
-              }}
-            >
-              <div style={{ fontFamily: "var(--font-display)", fontSize: "34px", color: "var(--brand-deep)", lineHeight: 1 }}>
+          {MILESTONES.map(([year, title, body]) => (
+            <div key={year} className="milestone">
+              <div
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(26px, 4vw, 34px)",
+                  color: "var(--brand-deep)",
+                  lineHeight: 1,
+                }}
+              >
                 {year}
               </div>
               <div>
@@ -74,8 +72,18 @@ export function HistoriaScreen({ onNav }: HistoriaScreenProps) {
         </div>
 
         <div className="grid-2" style={{ marginTop: "48px" }}>
-          <Photo src="/cerveseria-agullons.jpg" alt="La sala de cocció amb els tancs de fusta" height={260} caption="La sala de cocció." />
-          <Photo src="/032.jpg" alt="Els tiradors de fusta al bar" height={260} caption="Els tiradors, al bar de la masia." />
+          <Photo
+            src="/cerveseria-agullons.jpg"
+            alt="La sala de cocció amb els tancs de fusta"
+            height="clamp(200px, 42vw, 260px)"
+            caption="La sala de cocció."
+          />
+          <Photo
+            src="/032.jpg"
+            alt="Els tiradors de fusta al bar"
+            height="clamp(200px, 42vw, 260px)"
+            caption="Els tiradors, al bar de la masia."
+          />
         </div>
 
         <div style={{ textAlign: "center", marginTop: "48px" }}>
