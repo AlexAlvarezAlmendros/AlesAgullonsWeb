@@ -1,0 +1,26 @@
+<!-- @dsCard group="Spacing" viewport="700x190" name="Borders & Rules" subtitle="Ink hairlines, double rule, label frame" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 20px 24px; background: var(--paper-200); display:flex; gap:24px; align-items:center; }
+  .col { flex:1; }
+  .tag { font-family: var(--font-spec); font-size: 10px; color: var(--ink-600); margin-top:8px; }
+  .frame { font-family: var(--font-display); font-size: 18px; color: var(--ink-900); text-align:center; }
+</style>
+</head>
+<body class="paper-grain">
+  <div class="col">
+    <hr class="rule">
+    <div class="tag">.rule — 1.5px ink</div>
+    <hr class="rule-double">
+    <div class="tag">.rule-double — vintage</div>
+  </div>
+  <div class="col">
+    <div class="frame-label frame">Barrica</div>
+    <div class="tag">.frame-label — 3px double frame</div>
+  </div>
+</body>
+</html>

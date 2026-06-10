@@ -1,0 +1,24 @@
+<!-- @dsCard group="Spacing" viewport="700x170" name="Shadows" subtitle="Warm, low — paper on wood; press = letterpress inset" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--paper-300); }
+  .row { display:flex; gap: 24px; align-items:center; }
+  .item { text-align:center; }
+  .box { width: 96px; height: 70px; background: var(--paper-100); border-radius: var(--radius-sm); border:1px solid var(--line-faint); }
+  .tag { font-family: var(--font-spec); font-size: 10px; color: var(--ink-600); margin-top:10px; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-xs)"></div><div class="tag">xs</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-sm)"></div><div class="tag">sm</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-md)"></div><div class="tag">md</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-lg)"></div><div class="tag">lg</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-press)"></div><div class="tag">press (inset)</div></div>
+  </div>
+</body>
+</html>

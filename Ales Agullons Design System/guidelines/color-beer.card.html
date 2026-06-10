@@ -1,0 +1,26 @@
+<!-- @dsCard group="Colors" viewport="700x170" name="Beer Spectrum" subtitle="Barley gold → amber → roasted brown → stout" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 18px; background: var(--paper-200); }
+  .row { display: flex; gap: 10px; }
+  .sw { flex: 1; }
+  .chip { height: 72px; border-radius: var(--radius-sm); border: 1px solid var(--line-soft); }
+  .name { font-family: var(--font-spec); font-size: 11px; color: var(--ink-700); margin-top: 6px; }
+  .hex { font-family: var(--font-spec); font-size: 10px; color: var(--ink-500); }
+  .beer { font-family: var(--font-display); font-size: 11px; color: var(--ink-600); font-style: italic; }
+</style>
+</head>
+<body class="paper-grain">
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:var(--barley-300)"></div><div class="name">barley-300</div><div class="beer">Pura · Edgard</div></div>
+    <div class="sw"><div class="chip" style="background:var(--barley-500)"></div><div class="name">barley-500 ★</div><div class="beer">signature gold</div></div>
+    <div class="sw"><div class="chip" style="background:var(--amber-500)"></div><div class="name">amber-500</div><div class="beer">Bruno</div></div>
+    <div class="sw"><div class="chip" style="background:var(--brown-700)"></div><div class="name">brown-700</div><div class="beer">Runa</div></div>
+    <div class="sw"><div class="chip" style="background:var(--stout-900)"></div><div class="name">stout-900</div><div class="beer">roast</div></div>
+  </div>
+</body>
+</html>

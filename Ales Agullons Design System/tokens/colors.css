@@ -1,0 +1,77 @@
+/* ============================================================
+   ALES AGULLONS — COLOR TOKENS
+   An earthy, agrarian palette drawn from the masia: malted
+   barley, oak barrels, kraft paper, Penedès vines & merlot.
+   ============================================================ */
+
+:root {
+  /* --- Paper / surfaces (kraft & parchment) --- */
+  --paper-100: #FBF6EA;   /* lightest cream, page glow */
+  --paper-200: #F4E9D2;   /* parchment — default page */
+  --paper-300: #EADCBE;   /* aged paper, panels */
+  --paper-400: #DFCBA4;   /* kraft, deckled edges */
+  --paper-500: #CBB286;   /* worn label stock */
+
+  /* --- Ink (warm near-blacks & browns for type) --- */
+  --ink-900: #20160C;     /* darkest ink, headings */
+  --ink-800: #2E2113;     /* body ink */
+  --ink-700: #463320;     /* soft ink, secondary text */
+  --ink-600: #6B5436;     /* muted ink, captions */
+  --ink-500: #8A744F;     /* faint ink, disabled */
+
+  /* --- Barley & malt (the beer spectrum) --- */
+  --barley-200: #F0DCA8;  /* faint straw glow */
+  --barley-300: #E7C77A;  /* pale straw — Pura / Edgard */
+  --barley-400: #D9A441;  /* golden barley */
+  --barley-500: #C8922E;  /* amber, signature gold */
+  --amber-500:  #A8551E;  /* copper amber — Bruno */
+  --brown-600:  #7A4A24;  /* brown ale */
+  --brown-700:  #5A3219;  /* roasted malt — Runa */
+  --stout-900:  #2A1B10;  /* near-black roast */
+
+  /* --- Vine & cellar accents (Penedès terroir) --- */
+  --vine-600:   #5C6B34;  /* vineyard olive-green */
+  --vine-500:   #79873F;  /* sun-lit leaf */
+  --merlot-700: #6E2A30;  /* barrel-aged wine red — Setembre/Merlot */
+  --merlot-600: #8A3A3C;  /* lighter wine */
+  --terracotta-500: #B5562F; /* clay tile, warm accent */
+
+  /* --- Functional / line --- */
+  --line-strong: #463320; /* ink rules */
+  --line-soft:   #C9B48C; /* hairline on paper */
+  --line-faint:  #DECBA6;
+
+  /* ----------------------------------------------------------
+     SEMANTIC ALIASES — reference these in components
+     ---------------------------------------------------------- */
+  --bg-page:        var(--paper-200);
+  --bg-page-alt:    var(--paper-300);
+  --bg-raised:      var(--paper-100);
+  --bg-kraft:       var(--paper-400);
+  --bg-ink:         var(--stout-900);   /* dark sections / footer */
+  --bg-ink-alt:     var(--brown-700);
+
+  --surface-card:   var(--paper-100);
+  --surface-card-edge: var(--paper-400);
+
+  --text-strong:    var(--ink-900);
+  --text-body:      var(--ink-800);
+  --text-muted:     var(--ink-600);
+  --text-faint:     var(--ink-500);
+  --text-on-ink:    var(--paper-200);   /* type over dark sections */
+  --text-on-ink-muted: #C9B48C;
+
+  --brand-primary:  var(--barley-500);  /* signature gold */
+  --brand-deep:     var(--brown-700);   /* roasted brown */
+  --brand-accent:   var(--merlot-700);  /* wine accent */
+  --brand-vine:     var(--vine-600);
+
+  --border-default: var(--line-soft);
+  --border-strong:  var(--line-strong);
+  --border-faint:   var(--line-faint);
+
+  /* Status (kept earthy, not neon) */
+  --success: var(--vine-600);
+  --warning: var(--barley-500);
+  --danger:  var(--merlot-700);
+}

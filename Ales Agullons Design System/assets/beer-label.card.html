@@ -1,0 +1,39 @@
+<!-- @dsCard group="Brand" viewport="700x300" name="Beer Label Treatment" subtitle="The signature double-frame label — barley ground, ink type, spec line" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 26px; background: var(--paper-300); display:flex; gap: 22px; }
+  .label {
+    width: 230px; background: var(--barley-300);
+    border: 3px double var(--ink-800); padding: 20px 18px; text-align:center;
+    box-shadow: var(--shadow-md);
+  }
+  .label .e { font-family: var(--font-label); font-size: 10px; letter-spacing:0.28em; text-transform:uppercase; color: var(--ink-700); }
+  .label .n { font-family: var(--font-display); font-size: 40px; color: var(--ink-900); line-height:0.95; margin: 8px 0 4px; }
+  .label .s { font-family: var(--font-text); font-style:italic; font-size: 13px; color: var(--ink-800); }
+  .label .specs { font-family: var(--font-spec); font-size: 11px; color: var(--ink-700); margin-top: 14px; border-top: 1px solid var(--ink-800); padding-top: 8px; display:flex; justify-content:space-around;}
+  .dark { background: var(--brown-700); border-color: var(--paper-300); }
+  .dark .e, .dark .n, .dark .s { color: var(--paper-200); }
+  .dark .specs { color: var(--paper-300); border-top-color: var(--paper-400); }
+  .note { align-self:center; font-family: var(--font-text); font-size: 13px; color: var(--ink-700); max-width: 180px; }
+</style>
+</head>
+<body>
+  <div class="label">
+    <div class="e">Pale Ale · 75 cl</div>
+    <div class="n">Pura Pale</div>
+    <div class="s">una sola malta</div>
+    <div class="specs"><span>ABV 5.2%</span><span>IBU 38</span></div>
+  </div>
+  <div class="label dark">
+    <div class="e">Brown Ale · 75 cl</div>
+    <div class="n">Runa</div>
+    <div class="s">tostada, no negra</div>
+    <div class="specs"><span>ABV 5.6%</span><span>IBU 30</span></div>
+  </div>
+  <p class="note">Barley ground for pales, roasted brown for dark ales. ABV/IBU are illustrative placeholders.</p>
+</body>
+</html>

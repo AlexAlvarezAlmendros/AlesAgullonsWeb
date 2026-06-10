@@ -1,0 +1,92 @@
+/* ============================================================
+   ALES AGULLONS — BASE ELEMENT STYLES & HELPERS
+   Sets the rustic page defaults: parchment ground, ink type,
+   and a few reusable marks (eyebrow, ink rule, deckle frame).
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--bg-page);
+  color: var(--text-body);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Subtle paper grain — applied via .paper-grain or on body */
+.paper-grain, body.paper-grain {
+  background-image:
+    radial-gradient(rgba(70, 51, 32, 0.035) 1px, transparent 1px),
+    radial-gradient(rgba(70, 51, 32, 0.025) 1px, transparent 1px);
+  background-size: 7px 7px, 13px 13px;
+  background-position: 0 0, 4px 6px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--text-strong);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-snug);
+  margin: 0 0 var(--space-4);
+  text-wrap: balance;
+}
+h1 { font-size: var(--text-h1); line-height: var(--leading-tight); }
+h2 { font-size: var(--text-h2); }
+h3 { font-size: var(--text-h3); }
+h4 { font-size: var(--text-h4); }
+
+p { margin: 0 0 var(--space-4); text-wrap: pretty; }
+a { color: var(--brand-deep); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--brand-accent); }
+
+/* --- Eyebrow / overline --- */
+.eyebrow {
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  display: inline-block;
+}
+
+/* --- Display type --- */
+.display {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  line-height: var(--leading-tight);
+  color: var(--text-strong);
+}
+
+/* --- Ink rules --- */
+.rule {
+  border: 0;
+  border-top: var(--border-rule) solid var(--border-strong);
+  margin: var(--space-5) 0;
+}
+.rule-double {
+  border: 0;
+  height: 4px;
+  border-top: var(--border-hair) solid var(--border-strong);
+  border-bottom: var(--border-hair) solid var(--border-strong);
+  margin: var(--space-5) 0;
+}
+
+/* --- Deckle / label frame (double-ruled vintage frame) --- */
+.frame-label {
+  border: var(--border-frame) double var(--border-strong);
+  padding: var(--space-5);
+  background: var(--surface-card);
+}
+
+/* --- Spec mono text (ABV/IBU/format) --- */
+.spec {
+  font-family: var(--font-spec);
+  font-size: var(--text-sm);
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+}

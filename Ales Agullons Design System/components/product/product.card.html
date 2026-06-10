@@ -1,0 +1,47 @@
+<!-- @dsCard group="Components" viewport="700x500" name="Product — BeerCard & SpecList" subtitle="Bottle-label product cards + typewriter specs" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../ds-runtime.js"></script>
+<style>
+  body { margin: 0; padding: 24px; background: var(--paper-300); }
+  .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: start; }
+</style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { BeerCard, Button } = window.AlesAgullonsDesignSystem_76dff6;
+    function Demo() {
+      return (
+        <div className="row">
+          <BeerCard
+            name="Pura Pale" style="Pale Ale" tone="pale"
+            description="Cervesa pàlida d'una sola malta amb llúpols Cascade i Fuggles."
+            specs={[{label:"ABV",value:"5.2%"},{label:"IBU",value:"38"},{label:"Format",value:"75 cl"}]}
+            footer={<Button variant="primary" size="sm" fullWidth>Comprar</Button>}
+          />
+          <BeerCard
+            name="Runa" style="Brown Ale" tone="brown"
+            description="Fosca de tres maltes, torrada però sense arribar a negra. Llúpol Fuggles."
+            specs={[{label:"ABV",value:"5.6%"},{label:"IBU",value:"30"},{label:"Format",value:"75 cl"}]}
+            footer={<Button variant="deep" size="sm" fullWidth>Veure</Button>}
+          />
+          <BeerCard
+            name="Setembre" style="Fermentació mixta" special
+            description="Pura Pale amb Lambic, envellida en bóta de roure 9 mesos. Una vegada l'any."
+            specs={[{label:"Bóta",value:"Roure"},{label:"Guarda",value:"9 mesos"}]}
+            footer={<Button variant="merlot" size="sm" fullWidth>Edició</Button>}
+          />
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(<Demo />);
+  </script>
+</body>
+</html>

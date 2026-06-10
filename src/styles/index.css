@@ -1,0 +1,12 @@
+/* ============================================================
+   ALES AGULLONS — STYLE ENTRY
+   Tokens copied from "Ales Agullons Design System/tokens" plus
+   a small responsive layout layer for the website.
+   ============================================================ */
+
+@import url("./fonts.css");
+@import url("./colors.css");
+@import url("./typography.css");
+@import url("./spacing.css");
+@import url("./base.css");
+@import url("./layout.css");

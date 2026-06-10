@@ -1,0 +1,25 @@
+<!-- @dsCard group="Spacing" viewport="700x150" name="Radii" subtitle="Minimal — paper, not app (2–10px + pill)" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 20px 24px; background: var(--paper-200); }
+  .row { display:flex; gap: 18px; align-items:flex-start; }
+  .item { text-align:center; }
+  .box { width: 76px; height: 64px; background: var(--paper-100); border: 1.5px solid var(--ink-700); }
+  .tag { font-family: var(--font-spec); font-size: 10px; color: var(--ink-600); margin-top:6px; }
+</style>
+</head>
+<body class="paper-grain">
+  <div class="row">
+    <div class="item"><div class="box" style="border-radius:var(--radius-none)"></div><div class="tag">none</div></div>
+    <div class="item"><div class="box" style="border-radius:var(--radius-xs)"></div><div class="tag">xs·2</div></div>
+    <div class="item"><div class="box" style="border-radius:var(--radius-sm)"></div><div class="tag">sm·4</div></div>
+    <div class="item"><div class="box" style="border-radius:var(--radius-md)"></div><div class="tag">md·6</div></div>
+    <div class="item"><div class="box" style="border-radius:var(--radius-lg)"></div><div class="tag">lg·10</div></div>
+    <div class="item"><div class="box" style="border-radius:var(--radius-pill)"></div><div class="tag">pill</div></div>
+  </div>
+</body>
+</html>
