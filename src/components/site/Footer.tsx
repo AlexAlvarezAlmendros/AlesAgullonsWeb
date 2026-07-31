@@ -95,6 +95,16 @@ export function Footer({ onNav }: FooterProps) {
         }}
       >
         © Masia Agullons · Beu amb moderació · CA · ES
+        <br />
+        Dissenyat i Desenvolupat per{" "}
+        <a
+          href="https://www.alexalvarez.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "inherit" }}
+        >
+          alexalvarez.dev
+        </a>
       </div>
     </footer>
   );
